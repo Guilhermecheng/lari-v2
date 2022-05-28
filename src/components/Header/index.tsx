@@ -8,21 +8,24 @@ export function Header() {
 
     return (
         <Flex
-			minH={"80px"}
+			minH={{ base: "60px", md: "80px" }}
 			backgroundColor="brand.bg"
 			w="100%"
 			justifyContent="center"
 			alignItems="center"
+            position="fixed"
+            boxShadow="2xl"
 		>
             <Container
                 // w="100%"
                 maxW={1200}
+                px={{ base: "5", md: "10" }}
                 display={{base: "block", md: "flex"}}
                 justifyContent="space-between"
                 flexDirection={{base: "column", md: "row"}}// mobile orientation
             >
                 <Flex
-                    mt={{base: 5, md: 0 }}
+                    mt={{base: 3, md: 0 }}
                     justifyContent="center"
                     alignItems="center"
                 >

@@ -1,11 +1,18 @@
-import { Flex, Text } from "@chakra-ui/react"
-import { Footer } from "../../components/Footer"
-import { Header } from "../../components/Header"
+import { Container, Flex, Text } from "@chakra-ui/react"
+
 
 
 export default function Contact() {
 
     return (
-        <Text>Contact Page</Text>              
+        <Container
+            maxW={1200}
+            minH="100vh"
+            display={{base: "block", md: "flex"}}
+            justifyContent="space-between"
+            flexDirection={{base: "column", md: "row"}}
+        >
+            COntato
+        </Container>
     )
 }

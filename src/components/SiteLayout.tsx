@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
@@ -14,8 +14,14 @@ export default function SiteLayout({ children }: LayoutProps) {
 			flexDirection="column"
 		>
 			<Header />
-
-            { children }
+			<Box
+				position="relative"
+				top={{ base: "68px", md: "80px" }}
+				zIndex="-1"
+				// w="100%"
+			>
+            	{ children }
+			</Box>
 			
 			<Footer />
 		</Flex>
