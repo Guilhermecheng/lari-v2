@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <Container
             maxW={1200}
-            minH="100vh"
+            minH="93vh"
             display={{base: "block", md: "flex"}}
             justifyContent="space-between"
             flexDirection={{base: "column", md: "row"}}
