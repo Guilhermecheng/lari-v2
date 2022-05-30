@@ -1,5 +1,6 @@
 import { Flex, Text, Container, useBreakpointValue } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { MenuOptions } from './MenuOptions'
 
@@ -29,19 +30,27 @@ export function Header() {
                     justifyContent="center"
                     alignItems="center"
                 >
-                    <Image 
-                        src="/ls.svg"
-                        height={ breakpoint }
-                        width={ breakpoint }
-                    
-                    />
-                    <Text
-                        color="brand.title_bg_black"
-                        fontSize={{base: "xl", md: "2xl"}}
-                    >
-                        Dra. Larissa Silvestre
-                    </Text>
-                </Flex>
+                    <Link href='/'>
+                        <Flex
+                            justifyContent="center"
+                            alignItems="center"
+                            _hover={{ cursor: 'pointer' }}
+                        >
+                            <Image 
+                                src="/ls.svg"
+                                height={ breakpoint }
+                                width={ breakpoint }
+                            
+                            />
+                            <Text
+                                color="brand.title_bg_black"
+                                fontSize={{base: "xl", md: "2xl"}}
+                            >
+                                Dra. Larissa Silvestre
+                            </Text>
+                        </Flex>
+                    </Link>
+                    </Flex>
 
                 <MenuOptions />
                 

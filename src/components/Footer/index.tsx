@@ -56,12 +56,24 @@ export function Footer() {
                             <Box mt="4">
                                 <PageHeading isBgDark={true}>Nossas redes sociais</PageHeading>
 
-                                <Flex>
+                                <Flex
+                                    mt={4}
+                                >
                                     <Link href="">
-                                        <Image src="/linkedin.svg" height={24} width={24} />
+                                        <Box mr={4}>
+                                            <Image src="/linkedin.svg" height={24} width={24} />
+                                        </Box>
                                     </Link>
-                                    <Link href="">b</Link>
-                                    <Link href="">c</Link>
+                                    <Link href="">
+                                        <Box mr={4}>
+                                            <Image src="/insta.svg" height={24} width={24} />
+                                        </Box>
+                                    </Link>
+                                    <Link href="">
+                                        <Box mr={4}>
+                                            <Image src="/whats.svg" height={24} width={24} />
+                                        </Box>
+                                    </Link>
                                 </Flex>
                             </Box>
 
