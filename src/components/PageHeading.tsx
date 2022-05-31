@@ -5,9 +5,10 @@ interface PageHeadingProps {
     children: string;
     isBgDark: boolean;
     fontSize?: 'h1' | 'h2';
+    isMarginYNotNecessary?: boolean;
 }
 
-export function PageHeading({children, isBgDark, fontSize}: PageHeadingProps) {
+export function PageHeading({children, isBgDark, fontSize, isMarginYNotNecessary}: PageHeadingProps) {
     const headingColor =  !isBgDark ? '#000' : 'brand.title_bg_black'
     let headingFontSize = {base: "2em", md: "3em"}
 
@@ -27,7 +28,8 @@ export function PageHeading({children, isBgDark, fontSize}: PageHeadingProps) {
             fontFamily="Georgia, 'Times New Roman', Times, serif"
             fontWeight="medium"
             // bg="red"
-            py="4"
+            // py="4"
+            my={!isMarginYNotNecessary ? { base: 4, md: 8 } : 0}
             _after={{ content: `""`,  display: 'block', height: '5px', width: '50px', marginTop: '8px', background: headingColor }}
         >
             { children }

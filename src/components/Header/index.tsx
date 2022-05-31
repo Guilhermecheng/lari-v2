@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { MenuOptions } from './MenuOptions'
 
 export function Header() {
-    const  breakpoint = useBreakpointValue({ base: 40, md: 55 })
+    const  breakpoint = useBreakpointValue({ base: 40, lg: 55 })
 
     return (
         <Flex
@@ -20,13 +20,13 @@ export function Header() {
             <Container
                 // w="100%"
                 maxW={1200}
-                px={{ base: "5", md: "10" }}
-                display={{base: "block", md: "flex"}}
+                px={{ base: "5", lg: "10" }}
+                display={{base: "block", lg: "flex"}}
                 justifyContent="space-between"
-                flexDirection={{base: "column", md: "row"}}// mobile orientation
+                flexDirection={{base: "column", lg: "row"}}// mobile orientation
             >
                 <Flex
-                    mt={{base: 3, md: 0 }}
+                    mt={{base: 3, lg: 0 }}
                     justifyContent="center"
                     alignItems="center"
                 >
@@ -44,7 +44,7 @@ export function Header() {
                             />
                             <Text
                                 color="brand.title_bg_black"
-                                fontSize={{base: "xl", md: "2xl"}}
+                                fontSize={{base: "xl", lg: "2xl"}}
                             >
                                 Dra. Larissa Silvestre
                             </Text>

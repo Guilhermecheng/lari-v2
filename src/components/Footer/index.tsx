@@ -20,6 +20,7 @@ export function Footer() {
                 w="100%"
                 justifyContent="center"
                 alignItems="center"
+                mt={{ base: "68px", md: "80px" }} // heading compensation
                 pt='20px'
                 px={{base: 5, md: 0}}
             >
@@ -40,24 +41,24 @@ export function Footer() {
                     </GridItem>
 
                     <GridItem>
-                        <PageHeading isBgDark={true}>
+                        <PageHeading isBgDark={true} isMarginYNotNecessary>
                             Entre em contato
                         </PageHeading>
-                            
                             <Box
                                 color="brand.title_bg_black"
                                 fontSize="lg"
+                                mt={8}
                             >
                                 <Text mb="6">Telefone: 11 9 1234 1234</Text>
                                 <Text mb="6">E-mail: larissacarvalho.adv@gmail.com</Text>
                                 <Text>Endereço: Rua Pedro Alvares Cabral 123 - CEP 042123-123</Text>
                             </Box>
 
-                            <Box mt="4">
+                            <Box mt={8}>
                                 <PageHeading isBgDark={true}  fontSize='h2'>Nossas redes sociais</PageHeading>
 
                                 <Flex
-                                    mt={4}
+                                    mt={8}
                                 >
                                     <Link href="">
                                         <Box mr={4}>

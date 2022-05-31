@@ -10,12 +10,16 @@ const breakpoints = createBreakpoints({
 })
  
 export const theme = extendTheme({
+    fonts: {
+        body: `'Lato', sans-serif`,
+    },
     breakpoints,
     colors: {
         brand: {
             // bg: '#09090a',
             bg: '#181818',
             title_bg_black: '#E8C548',
+            title_bg_black_active: '#d69e2e',
         }
-    }
+    },
 })

@@ -3,6 +3,7 @@ import { Flex, Text, Collapse, useDisclosure, useBreakpointValue, Button } from 
 import NextLink from "next/link";
 
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router';
 
 const CustomFlexBox = styled(ChevronDownIcon)`
     transform: rotate(0deg);
@@ -34,24 +35,27 @@ const pages = [
 ]
 
 export function MenuOptions() {
+    const router = useRouter()
+    const currentRoute = router.pathname
+
     const { isOpen, onToggle } = useDisclosure()
-    const  breakpoint = useBreakpointValue({ base: false, md: true })
+    const  breakpoint = useBreakpointValue({ base: false, lg: true })
 
     return (
         <Flex
-            justifyContent={{base: "center", md: "flex-end"}}
-            direction={{base: "column", md: "row"}} // mobile orientation
+            justifyContent={{base: "center", lg: "flex-end"}}
+            direction={{base: "column", lg: "row"}} // mobile orientation
             alignItems="center"
-            mt={{base: "4", md: "0"}}
+            mt={{base: "4", lg: "0"}}
             zIndex="100"
+            color="brand.title_bg_black"
         >
             <CustomFlexBox
-                display={{base: "block", md: "none"}}
+                display={{base: "block", lg: "none"}}
                 position="absolute"
-                top="5"
+                top={{ base: "5", md: '6' }}
                 right="28px"
                 textAlign="center"
-                color="brand.title_bg_black"
                 fontSize="30"
                 onClick={onToggle}
                 isOpen={isOpen}
@@ -61,7 +65,7 @@ export function MenuOptions() {
                 in={!breakpoint ? isOpen : true }                
             >
                 <Flex
-                    direction={{base: "column", md: "row"}}
+                    direction={{base: "column", lg: "row"}}
                     textColor="brand.title_bg_black"
                     fontSize={{base: "16", md: "16"}}
                     alignItems="center"
@@ -70,10 +74,10 @@ export function MenuOptions() {
                     return (
                         <NextLink  key={ page.pageName } href={ page.pageHref } passHref>
                             <Text
-                                mr={{base: "0", md: "4"}}
-                                mt={{base: "4", md: "0"}}
+                                mr={{base: "0", lg: "4"}}
+                                mt={{base: "4", lg: "0"}}
                                 textAlign="center"
-                                // letterSpacing="1px"
+                                color={ currentRoute === page.pageHref ? "bisque" : "brand.title_bg_black" }
                                 fontWeight="medium"
                                 _hover={{ cursor: "pointer", color: "bisque" }}
                             >
@@ -85,14 +89,14 @@ export function MenuOptions() {
 
                     {/* <Text
                         mr="0"
-                        mt={{base: "4", md: "0"}}
-                        mb={{base: "4", md: "0"}}
+                        mt={{base: "4", lg: "0"}}
+                        mb={{base: "4", lg: "0"}}
                         textAlign="center"
                         _hover={{ cursor: "pointer", color: "bisque" }}
                     >
                         11 1234 1234
                     </Text> */}
-                    <Button my={{ base: "20px", md: 0 }} colorScheme="yellow">
+                    <Button my={{ base: "20px", lg: 0 }} colorScheme="yellow">
                         Chame no whats!
                     </Button>
                 </Flex>
