@@ -27,7 +27,7 @@ export function Footer() {
                     maxW={1200}
                     w="100%"
                     templateColumns={ gridTemplateColumns }
-                    gap={6}
+                    gap={{ base: 4, md: 6 }}
                     mx="10"
                     pb="8"
                 >
@@ -54,7 +54,7 @@ export function Footer() {
                             </Box>
 
                             <Box mt="4">
-                                <PageHeading isBgDark={true}>Nossas redes sociais</PageHeading>
+                                <PageHeading isBgDark={true}  fontSize='h2'>Nossas redes sociais</PageHeading>
 
                                 <Flex
                                     mt={4}

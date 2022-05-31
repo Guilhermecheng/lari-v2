@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Flex, Text, Collapse, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Text, Collapse, useDisclosure, useBreakpointValue, Button } from '@chakra-ui/react';
 import NextLink from "next/link";
 
 import styled from '@emotion/styled'
@@ -25,7 +25,12 @@ const pages = [
         pageName: "pag_contato",
         pageTitle: "Contato",
         pageHref: "/contact",
-    }
+    },
+    // {
+    //     pageName: "pag_blog",
+    //     pageTitle: "blog",
+    //     pageHref: "/blog",
+    // }
 ]
 
 export function MenuOptions() {
@@ -58,7 +63,7 @@ export function MenuOptions() {
                 <Flex
                     direction={{base: "column", md: "row"}}
                     textColor="brand.title_bg_black"
-                    fontSize={{base: "16", md: "18"}}
+                    fontSize={{base: "16", md: "16"}}
                     alignItems="center"
                 >
                     { pages.map(page => {
@@ -68,7 +73,7 @@ export function MenuOptions() {
                                 mr={{base: "0", md: "4"}}
                                 mt={{base: "4", md: "0"}}
                                 textAlign="center"
-                                letterSpacing="1px"
+                                // letterSpacing="1px"
                                 fontWeight="medium"
                                 _hover={{ cursor: "pointer", color: "bisque" }}
                             >
@@ -78,7 +83,7 @@ export function MenuOptions() {
                     )
                 }) }
 
-                    <Text
+                    {/* <Text
                         mr="0"
                         mt={{base: "4", md: "0"}}
                         mb={{base: "4", md: "0"}}
@@ -86,7 +91,10 @@ export function MenuOptions() {
                         _hover={{ cursor: "pointer", color: "bisque" }}
                     >
                         11 1234 1234
-                    </Text>
+                    </Text> */}
+                    <Button my={{ base: "20px", md: 0 }} colorScheme="yellow">
+                        Chame no whats!
+                    </Button>
                 </Flex>
             </Collapse>
         </Flex>

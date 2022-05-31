@@ -3,6 +3,7 @@ import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react'
 
 import { MainBanner } from '../components/MainBanner';
 import { PageHeading } from '../components/PageHeading';
+import Image from 'next/image';
 
 
 const Home: NextPage = () => {
@@ -20,11 +21,26 @@ const Home: NextPage = () => {
 				<Box>
 					<PageHeading isBgDark={false}>Quem é Dra. Larissa</PageHeading>
 
-					{/* <Image /> */}
-					<Text>
-						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque<br/>
-						ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-					</Text>
+					<Flex display={{ base: 'block', md: 'flex' }}>
+
+						<Box
+							// minW={400}
+						>
+							<Image src='/profile.jpeg' height={400} width={400} />
+
+						</Box>
+
+						<Text
+							maxW={{ base: '100%', md: '50%' }}
+							py={{ base: '5', md: 0 }}
+						>
+							"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque<br/>
+							ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+							
+							"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque<br/>
+							ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+						</Text>
+					</Flex>
 				</Box>
 			</Container>
 

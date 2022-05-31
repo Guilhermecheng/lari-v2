@@ -13,7 +13,8 @@ export const theme = extendTheme({
     breakpoints,
     colors: {
         brand: {
-            bg: '#09090a',
+            // bg: '#09090a',
+            bg: '#181818',
             title_bg_black: '#E8C548',
         }
     }
