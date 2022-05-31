@@ -1,5 +1,4 @@
-import { Heading } from "@chakra-ui/react";
-
+import { Divider, Heading } from "@chakra-ui/react";
 
 interface PageHeadingProps {
     children: string;
@@ -21,18 +20,27 @@ export function PageHeading({children, isBgDark, fontSize, isMarginYNotNecessary
     }
 
     return (
+        <>
         <Heading 
             as="h1" 
             color={ headingColor }
             fontSize={ headingFontSize }
             fontFamily="Georgia, 'Times New Roman', Times, serif"
             fontWeight="medium"
-            // bg="red"
-            // py="4"
             my={!isMarginYNotNecessary ? { base: 4, md: 8 } : 0}
-            _after={{ content: `""`,  display: 'block', height: '5px', width: '50px', marginTop: '8px', background: headingColor }}
         >
             { children }
+
+            <Divider 
+                display="flex" 
+                borderColor={headingColor} 
+                borderBottomWidth="5px" 
+                width="50px"
+                mt="8px" 
+                opacity="1" 
+            />
+
         </Heading>
+        </>
     )
 }

@@ -37,6 +37,7 @@ export function Footer() {
                             src="/logo-footer.svg"
                             height={ footerLogoHeightBreakPoint }
                             width={ footerLogoWidthBreakPoint }
+                            alt="Logo alternativo LS Advocacia e Acessoria"
                         />
                     </GridItem>
 
@@ -62,17 +63,17 @@ export function Footer() {
                                 >
                                     <Link href="">
                                         <Box mr={4}>
-                                            <Image src="/linkedin.svg" height={24} width={24} />
+                                            <Image src="/linkedin.svg" height={24} width={24} alt="LinkedIn" />
                                         </Box>
                                     </Link>
                                     <Link href="">
                                         <Box mr={4}>
-                                            <Image src="/insta.svg" height={24} width={24} />
+                                            <Image src="/insta.svg" height={24} width={24} alt="Instagram" />
                                         </Box>
                                     </Link>
                                     <Link href="">
                                         <Box mr={4}>
-                                            <Image src="/whats.svg" height={24} width={24} />
+                                            <Image src="/whats.svg" height={24} width={24} alt="Whatsapp" />
                                         </Box>
                                     </Link>
                                 </Flex>
@@ -92,7 +93,7 @@ export function Footer() {
                 color="brand.title_bg_black"
                 fontSize="0.8em"
             >
-                © Larissa Carvalho 2022. Todos os direitos reservados.
+                © Larissa Silvestre Advocacia e Acessoria 2022. Todos os direitos reservados.
             </Flex>
         </>
     )

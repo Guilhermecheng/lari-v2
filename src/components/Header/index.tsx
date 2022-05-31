@@ -40,7 +40,7 @@ export function Header() {
                                 src="/ls.svg"
                                 height={ breakpoint }
                                 width={ breakpoint }
-                            
+                                alt="Logo Cabeçalho LS Advocacia e Acessoria"
                             />
                             <Text
                                 color="brand.title_bg_black"
