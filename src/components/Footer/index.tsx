@@ -91,9 +91,9 @@ export function Footer() {
                 alignItems="center"
                 justifyContent="center"
                 color="brand.title_bg_black"
-                fontSize="0.8em"
+                fontSize="0.7em"
             >
-                © Larissa Silvestre Advocacia e Acessoria 2022. Todos os direitos reservados.
+                © LS Advocacia e Acessoria 2022. Todos os direitos reservados.
             </Flex>
         </>
     )

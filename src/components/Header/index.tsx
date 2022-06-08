@@ -9,6 +9,7 @@ export function Header() {
 
     return (
         <Flex
+            zIndex={1000}
 			minH={{ base: "60px", md: "80px" }}
 			backgroundColor="brand.bg"
 			w="100%"

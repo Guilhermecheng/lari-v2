@@ -17,7 +17,7 @@ export default function SiteLayout({ children }: LayoutProps) {
 			<Box
 				position="relative"
 				top={{ base: "68px", md: "80px" }}
-				zIndex="-1"
+				zIndex="10"
 				// w="100%"
 			>
             	{ children }

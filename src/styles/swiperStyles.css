@@ -1,0 +1,18 @@
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    color: #ffba08;
+    padding: 2rem 1rem;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullets > span {
+    background-color: #ffba08;
+}
+
+/* mobile only */
+@media (max-width: 500px) {
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        display: none;
+    }
+}
