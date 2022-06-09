@@ -50,31 +50,33 @@ export function Slides() {
                     <SwiperSlide
                         key={ actArea.areaId }
                     >
-                        <Flex
-                            bg={`linear-gradient(0deg, rgba(51, 51,51, 0.8), rgba(51, 51,51, 0.8)), url(${ actArea.areaBackground })`}
-                            h={{ base: "200px", md: "300px", lg: "400px" }}
-                            backgroundPosition="center"
-                            backgroundRepeat="no-repeat"
-                            backgroundSize="cover"
-                            flexDirection="column"
-                            alignItems="center"
-                            justifyContent="center"
-                            px={14}
-                            color="#e1e1e1"
-                        >
-                            <Heading
-                                fontFamily="Georgia, 'Times New Roman', Times, serif"
-                                fontSize={{ base: 'xl', md: '4xl' }}
-                                fontWeight="medium"
-                                letterSpacing="1px"
-                                mb={{ base: 0, lg: 10 }}
-                                textAlign="center"
+                        <Link href="/areas">
+                            <Flex
+                                bg={`linear-gradient(0deg, rgba(51, 51,51, 0.8), rgba(51, 51,51, 0.8)), url(${ actArea.areaBackground })`}
+                                h={{ base: "200px", md: "300px", lg: "400px" }}
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                                flexDirection="column"
+                                alignItems="center"
+                                justifyContent="center"
+                                px={20}
+                                color="#e1e1e1"
                             >
-                                { actArea.areaTitle.toUpperCase() }
-                            </Heading>
+                                <Heading
+                                    fontFamily="Georgia, 'Times New Roman', Times, serif"
+                                    fontSize={{ base: 'xl', md: '4xl' }}
+                                    fontWeight="medium"
+                                    letterSpacing="1px"
+                                    mb={{ base: 0, lg: 10 }}
+                                    textAlign="center"
+                                >
+                                    { actArea.areaTitle.toUpperCase() }
+                                </Heading>
 
-                            { breakPoint && <Text>{ actArea.areaDescription }</Text> }
-                        </Flex>
+                                { breakPoint && <Text>{ actArea.areaDescription }</Text> }
+                            </Flex>
+                        </Link>
                     </SwiperSlide>
                 )
             }) }

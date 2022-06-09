@@ -1,13 +1,20 @@
 import type { NextPage } from 'next'
-import { Box, Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, Text, Image, useBreakpointValue } from '@chakra-ui/react'
+
+import { IoDiamondSharp } from 'react-icons/io5'
+import { GiBullseye } from 'react-icons/gi'
+import { ImEye } from 'react-icons/im'
 
 import { MainBanner } from '../components/MainBanner';
 import { PageHeading } from '../components/PageHeading';
 import { Slides } from '../components/Slides';
+import { ViewIcon } from '@chakra-ui/icons';
 // import Image from 'next/image';
 
 
 const Home: NextPage = () => {
+	const iconSizes = useBreakpointValue({ base: 60, md: 80 })
+
 	return (
 		<>
 			<MainBanner />
@@ -84,22 +91,98 @@ const Home: NextPage = () => {
 			<Container
 				maxW={1200}
 				px={{ base: "5", md: "10" }}
-				mb={{ base: 0, md: 12 }}
+				mb={{ base: 8, md: 12 }}
 				minH="20vh"
                 display={{base: "block", md: "flex"}}
                 justifyContent="space-between"
                 flexDirection={{base: "column", md: "row"}}
 			>
-				<Box>
+				<Box w='100%'>
 					<PageHeading isBgDark={false}>Princípios</PageHeading>
 
-					{/* <Image /> */}
-					<Text
-						fontSize={{ base: 'md', md: 'xl' }}
+					<Flex
+						w='100%'
+						direction={{ base: "column", lg: "row" }}
+						gap={{ base: 6, lg: 8 }}
 					>
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-						ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-					</Text>
+						<Flex
+							w="100%"
+							p={{ base: 5, md: 10 }}
+							direction="column"
+							alignItems="center"
+							textAlign="center"
+							border="1px solid"
+							borderColor="gray.200"
+							boxShadow=" 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);"
+							borderRadius={8}
+						>
+							<GiBullseye  size={ iconSizes } color="#181818" />
+							<Heading
+								fontFamily="Georgia, 'Times New Roman', Times, serif"
+								color="brand.title_bg_black"
+								p={{ base: 3, lg: 5 }}
+							>
+								Missão
+							</Heading>
+
+							<Text
+								fontSize={{ base: "md", md: "lg" }}
+							>
+								Ajudar nossos clientes a solucionar seus problemas e obter soluções legais de forma efetiva
+							</Text>
+						</Flex>
+						<Flex
+							w="100%"
+							p={{ base: 5, md: 10 }}
+							direction="column"
+							alignItems="center"
+							textAlign="center"
+							border="1px solid"
+							borderColor="gray.200"
+							boxShadow=" 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);"
+							borderRadius={8}
+						>
+							<ImEye  size={ iconSizes } color="#181818" />
+							<Heading
+								fontFamily="Georgia, 'Times New Roman', Times, serif"
+								color="brand.title_bg_black"
+								p={{ base: 3, lg: 5 }}
+							>
+								Visão
+							</Heading>
+
+							<Text
+								fontSize={{ base: "md", md: "lg" }}
+							>
+								Ser referência em resolução de problemas e burocracias legais
+							</Text>
+						</Flex>
+						<Flex
+							w="100%"
+							p={{ base: 5, md: 10 }}
+							direction="column"
+							alignItems="center"
+							textAlign="center"
+							border="1px solid #f0f5f8"
+							boxShadow=" 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);"
+							borderRadius={8}
+						>
+							<IoDiamondSharp  size={ iconSizes } color="#181818" />
+							<Heading
+								fontFamily="Georgia, 'Times New Roman', Times, serif"
+								color="brand.title_bg_black"
+								p={{ base: 3, lg: 5 }}
+							>
+								Valores
+							</Heading>
+
+							<Text
+								fontSize={{ base: "md", md: "lg" }}
+							>
+								Agir com honra, ética e excelência, sempre com transparência e confiança de nosso cliente
+							</Text>
+						</Flex>
+					</Flex>
 				</Box>
 			</Container>
 		</>
