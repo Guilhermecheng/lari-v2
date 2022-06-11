@@ -163,7 +163,8 @@ const Home: NextPage = () => {
 							direction="column"
 							alignItems="center"
 							textAlign="center"
-							border="1px solid #f0f5f8"
+							border="1px solid"
+							borderColor="gray.200"
 							boxShadow=" 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);"
 							borderRadius={8}
 						>
