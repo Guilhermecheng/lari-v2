@@ -4,6 +4,7 @@ import NextLink from "next/link";
 
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const CustomFlexBox = styled(ChevronDownIcon)`
     transform: rotate(0deg);
@@ -40,6 +41,12 @@ export function MenuOptions() {
 
     const { isOpen, onToggle } = useDisclosure()
     const  breakpoint = useBreakpointValue({ base: false, lg: true })
+
+    useEffect(() => {
+        if(isOpen) {
+            onToggle()
+        }
+    }, [router.asPath])
 
     return (
         <Flex

@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 
 						<Text
 							maxW={{ base: '100%', lg: '60%' }}
-							py={{ base: 10, md: 0 }}
+							py={{ base: 10, lg: 0 }}
 							fontSize={{ base: 'md', md: 'xl' }}
 							textAlign='justify'
 							ml={{ base: 0, lg: '2em' }}
