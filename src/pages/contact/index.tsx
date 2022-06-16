@@ -1,33 +1,54 @@
-import { Box, Button, Container, Flex, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, useBreakpointValue } from "@chakra-ui/react"
-import { FormEvent, useState } from "react"
+import { 
+    Box,
+    Button,
+    Container,
+    FormControl, 
+    FormLabel, 
+    Grid, 
+    GridItem, 
+    Input, 
+    Select, 
+    Text, 
+    Textarea, 
+    useBreakpointValue 
+} from "@chakra-ui/react"
+
 import { useForm } from "react-hook-form"
-import { ImSleepy2 } from "react-icons/im"
+import * as Yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { PageHeading } from "../../components/PageHeading"
+import { InputError } from "./InputError";
 
+interface FormData {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+}
 
+const schema = Yup.object({
+    name: Yup.string().required('Preenchimento obrigatório'),
+    email: Yup.string().email().required('Preenchimento obrigatório'),
+    phone: Yup.string().required('Preenchimento obrigatório'),
+    subject: Yup.string().required('Preenchimento obrigatório'),
+    message: Yup.string().required('Preenchimento obrigatório'),
+});
 
 export default function Contact() {
     const gridTemplateColumns = useBreakpointValue({ base: '1fr', lg: 'repeat(2, 1fr)' })
 
-    // const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+        resolver: yupResolver(schema)
+    });
 
-    const [nameData, setNameData] = useState('')
-    const [ emailData, setEmailData ] = useState('')
-    const [ phoneData, setPhoneData ] = useState('')
-    const [ subjectData, setSubjectDate ] = useState('')
-    const [ messageData, setMessageData ] = useState('')
-
-    const formValues = {
-        name: nameData,
-        email: emailData,
-        phone: phoneData,
-        subject: subjectData,
-        message: messageData,
+    function formSubmit( formData: FormData ) {
+        window.alert(JSON.stringify(formData, null, 2))
     }
 
-    async function formSubmit( event: FormEvent ) {
-        event.preventDefault();
-        window.alert(JSON.stringify(formValues, null, 2));
+    function onError(error: any) {
+        console.log(error)
     }
 
     return (
@@ -60,9 +81,9 @@ export default function Contact() {
 
                         </Box>
 
-                        <form onSubmit={formSubmit}>
+                        <form onSubmit={handleSubmit(formSubmit, onError)}>
                             <FormControl>
-                                <FormLabel htmlFor="name" fontSize='xl' >Nome</FormLabel>
+                                <FormLabel htmlFor="name" fontSize='xl' >Nome { errors?.name?.type && <InputError type={errors.name.type} field="name" /> }</FormLabel>
                                 <Input
                                     id='name'
                                     placeholder="Nome"
@@ -70,10 +91,10 @@ export default function Contact() {
                                     borderColor='gray.300'
                                     mb={{ base: 3, md: 4 }}
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
-                                    onChange={ event => setNameData(event.currentTarget.value) }
+                                    { ...register("name") }
                                 />
-                
-                                <FormLabel htmlFor="email" fontSize='xl' >E-mail</FormLabel>
+
+                                <FormLabel htmlFor="email" fontSize='xl' >E-mail { errors?.email?.type && <InputError  type={errors.email.type} field="email" /> }</FormLabel>
                                 <Input
                                     id='email'
                                     placeholder="E-mail"
@@ -81,10 +102,10 @@ export default function Contact() {
                                     borderColor='gray.300'
                                     mb={{ base: 3, md: 4 }}
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
-                                    onChange={ event => setEmailData(event.currentTarget.value) }
+                                    { ...register("email") }
                                 />
                 
-                                <FormLabel htmlFor="phone" fontSize='xl' >Telefone</FormLabel>
+                                <FormLabel htmlFor="phone" fontSize='xl' >Telefone { errors?.phone?.type && <InputError  type={errors.phone.type} field="phone" /> }</FormLabel>
                                 <Input
                                     id='phone'
                                     placeholder="Telefone"
@@ -92,10 +113,10 @@ export default function Contact() {
                                     borderColor='gray.300'
                                     mb={{ base: 3, md: 4 }}
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
-                                    onChange={ event => setPhoneData(event.currentTarget.value) }
+                                    { ...register("phone") }
                                 />
 
-                                <FormLabel htmlFor="subject" fontSize='xl'>Assunto</FormLabel>
+                                <FormLabel htmlFor="subject" fontSize='xl'>Assunto { errors?.subject?.type && <InputError  type={errors.subject.type} field="subject" /> }</FormLabel>
                                 <Select
                                     id='subject'
                                     placeholder="Selecione um assunto"
@@ -103,14 +124,14 @@ export default function Contact() {
                                     borderColor='gray.300'
                                     mb={{ base: 3, md: 4 }}
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
-                                    onChange={ event => setSubjectDate(event.currentTarget.value) }
+                                    { ...register("subject") }
                                 >
                                     <option value='civil'>Civil</option>
                                     <option value='trabalhista'>Trabalhista</option>
                                     <option value='familia_e_sucessao'>Família e sucessão</option>
                                 </Select>
 
-                                <FormLabel htmlFor="message" fontSize='xl' >Mensagem</FormLabel>
+                                <FormLabel htmlFor="message" fontSize='xl' >Mensagem { errors?.message?.type && <InputError  type={errors.message.type} field="message" /> }</FormLabel> 
                                 <Textarea
                                     id="message"
                                     placeholder="Deixe aqui sua mensagem!"
@@ -119,11 +140,14 @@ export default function Contact() {
                                     border='1px
                                     solid'
                                     borderColor='gray.300'
-                                    mb={{ base: 4, md: 6 }}
+                                    mb={{ base: 3, md: 4 }}
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
-                                    onChange={ event => setMessageData(event.currentTarget.value) }
+                                    { ...register("message") }
                                 />
+
                                 <Button
+                                    display="block"
+                                    mt={{ base: 1, md: 2 }}
                                     type="submit"
                                     size='md'
                                     w={{ base: '100%', md: 120 }}
