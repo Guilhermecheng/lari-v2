@@ -2,6 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { WhatsButton } from "./WhatsButton";
 
 interface LayoutProps {
     children: ReactNode;
@@ -24,6 +25,7 @@ export default function SiteLayout({ children }: LayoutProps) {
 			</Box>
 			
 			<Footer />
+			{/* <WhatsButton /> */}
 		</Flex>
 	)
 }

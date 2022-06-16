@@ -18,7 +18,7 @@ import * as Yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { PageHeading } from "../../components/PageHeading"
-import { InputError } from "./InputError";
+import { InputError } from "../../components/InputError";
 
 interface FormData {
     name: string;
