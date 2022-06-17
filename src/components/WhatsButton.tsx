@@ -7,7 +7,7 @@ export function WhatsButton() {
         <Flex
             position="fixed"
             right="4vw"
-            top="90vh"
+            bottom="4vh"
             zIndex={1000}
         >
             <Link href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_PHONE_NUMBER}`} passHref>
