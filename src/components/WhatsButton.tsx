@@ -1,15 +1,25 @@
 import { Box } from '@chakra-ui/react'
+import Link from 'next/link'
 import { BsWhatsapp } from 'react-icons/bs'
 
 export function WhatsButton() {
     return (
-        <Box
-            as="span"
-            position="fixed"
-            right="200px"
-            top="90vh"
-        >
-            <BsWhatsapp size={40} color="#25d366" />
-        </Box>
+        <Link href="https://api.whatsapp.com/send?phone=5511974375560" passHref>
+            <Box
+                as="a"
+                target="_blank"
+                position="fixed"
+                right="4vw"
+                top="90vh"
+                zIndex={1000}
+                bg="#25d366"
+                p={3}
+                borderRadius={40}
+                boxShadow="2xl"
+                cursor="pointer"
+            >
+                <BsWhatsapp size={30} color="white" />
+            </Box>
+        </Link>
     )
 }

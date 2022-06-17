@@ -1,10 +1,11 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Flex, Text, Collapse, useDisclosure, useBreakpointValue, Button } from '@chakra-ui/react';
+import { Flex, Text, Collapse, useDisclosure, useBreakpointValue, Button, Box } from '@chakra-ui/react';
 import NextLink from "next/link";
 
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 const CustomFlexBox = styled(ChevronDownIcon)`
     transform: rotate(0deg);
@@ -93,19 +94,18 @@ export function MenuOptions() {
                         </NextLink>
                     )
                 }) }
-
-                    {/* <Text
-                        mr="0"
-                        mt={{base: "4", lg: "0"}}
-                        mb={{base: "4", lg: "0"}}
-                        textAlign="center"
-                        _hover={{ cursor: "pointer", color: "bisque" }}
-                    >
-                        11 1234 1234
-                    </Text> */}
-                    <Button my={{ base: "20px", lg: 0 }} colorScheme="yellow">
-                        Chame no whats!
-                    </Button>
+                    
+                    <Link href="https://api.whatsapp.com/send?phone=5511974375560" passHref>
+                        <Box as="a" target="_blank">
+                            <Button 
+                                my={{ base: "20px", lg: 0 }} 
+                                colorScheme="yellow" 
+                                _hover={{ color: "#f0f0f0", backgroundColor: "#1dad52" }}
+                            >
+                                Chame no whats!
+                            </Button>
+                        </Box>
+                    </Link>
                 </Flex>
             </Collapse>
         </Flex>

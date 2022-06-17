@@ -61,18 +61,18 @@ export function Footer() {
                                 <Flex
                                     mt={8}
                                 >
-                                    <Link href="">
-                                        <Box mr={4}>
+                                    <Link href="https://www.linkedin.com/in/larissacsilvestre/" passHref>
+                                        <Box mr={4} as="a" target="_blank">
                                             <Image src="/linkedin.svg" height={24} width={24} alt="LinkedIn" />
                                         </Box>
                                     </Link>
-                                    <Link href="">
-                                        <Box mr={4}>
+                                    <Link href="https://www.instagram.com/larissasilvestreadv/" passHref>
+                                        <Box mr={4} as="a" target="_blank">
                                             <Image src="/insta.svg" height={24} width={24} alt="Instagram" />
                                         </Box>
                                     </Link>
-                                    <Link href="">
-                                        <Box mr={4}>
+                                    <Link href="https://api.whatsapp.com/send?phone=5511974375560" passHref>
+                                        <Box mr={4} as="a" target="_blank">
                                             <Image src="/whats.svg" height={24} width={24} alt="Whatsapp" />
                                         </Box>
                                     </Link>

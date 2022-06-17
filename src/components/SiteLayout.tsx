@@ -25,7 +25,7 @@ export default function SiteLayout({ children }: LayoutProps) {
 			</Box>
 			
 			<Footer />
-			{/* <WhatsButton /> */}
+			<WhatsButton />
 		</Flex>
 	)
 }

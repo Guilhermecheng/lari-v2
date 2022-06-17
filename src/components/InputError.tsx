@@ -15,8 +15,9 @@ const validations:  { [key: string]: any } = {
     },
     phone: {
         required: "Telefone obrigatório",
+        matches: "O número informado é inválido"
     },
-    subject: {
+    category: {
         required: "Selecione um assunto",
     },
     message: {
@@ -26,15 +27,13 @@ const validations:  { [key: string]: any } = {
 
 export function InputError({ type, field }: InputErrorProps) {
     return (
-        
         <Text
             as="span"
             fontSize={{ base: 14, md: 16 }}
             color="#FF6961"
             ml={1}
         >
-            
             { validations[field][type] }
-            </Text>
+        </Text>
     )
 }
