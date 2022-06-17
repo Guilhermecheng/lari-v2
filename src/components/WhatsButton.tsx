@@ -4,7 +4,7 @@ import { BsWhatsapp } from 'react-icons/bs'
 
 export function WhatsButton() {
     return (
-        <Link href="https://api.whatsapp.com/send?phone=5511974375560" passHref>
+        <Link href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_PHONE_NUMBER}`} passHref>
             <Box
                 as="a"
                 target="_blank"

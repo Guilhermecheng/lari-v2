@@ -56,7 +56,7 @@ export default function Contact() {
 
         axios({
             method: 'post',
-            url: "https://formspree.io/f/xlezvyla ",
+            url: `https://formspree.io/f/${process.env.FORMSPREE_API_URL}`,
             data: formData,
             headers: {
           "Content-Type": "application/json",
@@ -118,6 +118,7 @@ export default function Contact() {
                                 <FormLabel htmlFor="email" fontSize='xl' >E-mail { errors?.email?.type && <InputError  type={errors.email.type} field="email" /> }</FormLabel>
                                 <Input
                                     id='email'
+                                    type="email"
                                     placeholder="E-mail"
                                     border='1px solid'
                                     borderColor='gray.300'
@@ -148,9 +149,9 @@ export default function Contact() {
                                     _focus={{ border: '2px solid', borderColor: 'brand.title_bg_black' }}
                                     { ...register("category") }
                                 >
-                                    <option value='civil'>Civil</option>
-                                    <option value='trabalhista'>Trabalhista</option>
-                                    <option value='familia_e_sucessao'>Família e sucessão</option>
+                                    <option value='Civil'>Civil</option>
+                                    <option value='Trabalhista'>Trabalhista</option>
+                                    <option value='Família e sucessão'>Família e sucessão</option>
                                 </Select>
 
                                 <FormLabel htmlFor="message" fontSize='xl' >Mensagem { errors?.message?.type && <InputError  type={errors.message.type} field="message" /> }</FormLabel> 
