@@ -20,8 +20,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { PageHeading } from "../../components/PageHeading"
 import { InputError } from "../../components/InputError";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { ImSpinner2 } from "react-icons/im";
+import {  useState } from "react";
 
 interface FormCustomerData {
     name: string;
