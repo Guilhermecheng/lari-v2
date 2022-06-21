@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { Box, Container, Flex, Heading, Text, Image, useBreakpointValue } from '@chakra-ui/react'
+import Head from 'next/head'
 
 import { IoDiamondSharp } from 'react-icons/io5'
 import { GiBullseye } from 'react-icons/gi'
@@ -17,6 +18,9 @@ const Home: NextPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>LS Advocacia e Acessoria</title>
+			</Head>
 			<MainBanner />
 			<Container
 				maxW={1200}

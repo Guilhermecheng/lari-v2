@@ -21,6 +21,7 @@ import { PageHeading } from "../../components/PageHeading"
 import { InputError } from "../../components/InputError";
 import axios from "axios";
 import {  useState } from "react";
+import Head from "next/head";
 
 interface FormCustomerData {
     name: string;
@@ -73,6 +74,9 @@ export default function Contact() {
 
     return (
         <>
+            <Head>
+				<title>LS Advocacia e Acessoria | Contato</title>
+			</Head>
             <Container
                 maxW={1200}
                 w='100%'
