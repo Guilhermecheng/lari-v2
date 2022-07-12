@@ -14,13 +14,13 @@ const actingAreas = [
     {
         areaId:  'direito_civil',
         areaTitle: 'Direito Civil',
-        areaDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
+        areaDescription: 'Trata normas reguladoras de direitos, obrigações dos cidadãos e as relações entre pessoas naturais e jurídicas',
         areaBackground: '/images/direito_civil.png',
     },
     {
         areaId: 'direito_trabalhista',
         areaTitle: 'Direito Trabalhista',
-        areaDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
+        areaDescription: 'Área do direito que regula a relação entre empregado e empregador. Ramo essencial para preservar a justiça na sociedade.',
         areaBackground: '/images/direito_trabalhista.jpg',
     },
     {
@@ -62,19 +62,20 @@ export function Slides() {
                                 justifyContent="center"
                                 px={20}
                                 color="#e1e1e1"
+                                _hover={{ opacity: 0.8 }}
                             >
                                 <Heading
                                     fontFamily="Georgia, 'Times New Roman', Times, serif"
                                     fontSize={{ base: 'xl', md: '4xl' }}
                                     fontWeight="medium"
                                     letterSpacing="1px"
-                                    mb={{ base: 0, lg: 10 }}
+                                    mb={{ base: 0, lg: 5 }}
                                     textAlign="center"
                                 >
                                     { actArea.areaTitle.toUpperCase() }
                                 </Heading>
 
-                                { breakPoint && <Text>{ actArea.areaDescription }</Text> }
+                                { breakPoint && <Text fontSize='xl'>{ actArea.areaDescription }</Text> }
                             </Flex>
                         </Link>
                     </SwiperSlide>
