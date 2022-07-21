@@ -1,7 +1,7 @@
 import { Divider, Heading } from "@chakra-ui/react";
 
 interface PageHeadingProps {
-    children: string;
+    children: string | any;
     isBgDark: boolean;
     fontSize?: 'h1' | 'h2';
     isMarginYNotNecessary?: boolean;

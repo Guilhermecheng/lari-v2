@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { Box, Container, Flex, Heading, Text, Image, useBreakpointValue } from '@chakra-ui/react'
 import Head from 'next/head'
 
@@ -10,11 +10,17 @@ import { MainBanner } from '../components/MainBanner';
 import { PageHeading } from '../components/PageHeading';
 import { Slides } from '../components/Slides';
 import { ViewIcon } from '@chakra-ui/icons';
+import { PrismicClient } from '../services/prismic'
 // import Image from 'next/image';
 
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ principles }: any) => {
 	const iconSizes = useBreakpointValue({ base: 60, md: 80 })
+
+	if(principles) {
+
+		console.log(principles)
+	}
 
 	return (
 		<>
@@ -36,7 +42,6 @@ const Home: NextPage = () => {
 
 					<Flex 
 						display={{ base: 'block', lg: 'flex' }}
-						// mt={{ base: 4, lg: 6 }}
 					>
 						<Flex
 							display={{ base: 'flex', lg: 'block' }}
@@ -195,3 +200,24 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async () => {
+	const response = await PrismicClient.getAllByType('principles');
+
+	console.log(response)
+	const principles = response.map((rep) => {
+		const title = rep.data.principle_title[0].text;
+		const description = rep.data.principle_description[0].text;
+
+		return {
+			title,
+			description
+		}
+	})
+	
+	return {
+		props: {
+			principles
+		}
+	}
+}
