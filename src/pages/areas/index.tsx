@@ -1,15 +1,23 @@
-import { Box, Container, Flex, Grid, Text, Image, ListItem, useBreakpointValue, Heading } from "@chakra-ui/react";
+import { Box, Flex, Grid, Text, useBreakpointValue, Heading } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from 'next/head'
 import { RiArrowRightSFill } from "react-icons/ri";
 import { PageHeading } from "../../components/PageHeading";
 import { PrismicClient } from "../../services/prismic";
 
+interface ActingAreasProp {
+    actingAreas: {
+        bgImage: string;
+        areaTitle: string;
+        areaFullDescription: {
+            type: string;
+            text: string;
+        }[];
+    }[]
+}
 
-export default function Areas({ actingAreas }: any) {
+export default function Areas({ actingAreas }: ActingAreasProp) {
     const  isMobileBreakpoint = useBreakpointValue({ base: true, lg: false });
-
-    console.log(actingAreas)
 
     if(!actingAreas) {
         return <Text>Carregando...</Text>
@@ -24,7 +32,7 @@ export default function Areas({ actingAreas }: any) {
             
                 <Box display="block">
 
-                    { actingAreas.map((area: any, index: number) => {
+                    { actingAreas.map((area, index: number) => {
     
                         if(index % 2 == 0) {
                             return (
@@ -43,12 +51,12 @@ export default function Areas({ actingAreas }: any) {
                                             <PageHeading isBgDark={false} > { area.areaTitle } </PageHeading>
                                             
                                             <Box pb={10}>
-                                                { area.areaFullDescription.map((paragraph: any, index: number) => {
+                                                { area.areaFullDescription.map((paragraph, index: number) => {
                                                         return (
-                                                            <Flex alignItems='center' mb={4} gap={2}>
+                                                            <Flex key={ index } alignItems='center' mb={4} gap={2}>
                                                                 { paragraph.type === 'list-item' && <RiArrowRightSFill size={40} /> }
                                                                 <Text 
-                                                                    key={ index } 
+                                                                    
                                                                     as={ paragraph.type === 'list-item' ? 'h2' : 'p' }
                                                                     fontSize={ paragraph.type === 'list-item' ? 'xl' : 'lg' }
                                                                     fontWeight={ paragraph.type === 'list-item' ? 'bold' : 'normal' }
@@ -74,12 +82,12 @@ export default function Areas({ actingAreas }: any) {
                                             <PageHeading isBgDark={true} > { area.areaTitle } </PageHeading>
     
                                             <Box pb={10}>
-                                                { area.areaFullDescription.map((paragraph: any, index: number) => {
+                                                { area.areaFullDescription.map((paragraph, index: number) => {
                                                         return (
-                                                            <Flex alignItems='center' color="brand.title_bg_black" mb={4} gap={2}>
+                                                            <Flex key={ index } alignItems='center' color="brand.title_bg_black" mb={4} gap={2}>
                                                                 { paragraph.type === 'list-item' && <RiArrowRightSFill size={40} /> }
                                                                 <Text 
-                                                                    key={ index } 
+                                                                    
                                                                     as={ paragraph.type === 'list-item' ? 'h2' : 'p' }
                                                                     fontSize={ paragraph.type === 'list-item' ? 'xl' : 'lg' }
                                                                     fontWeight={ paragraph.type === 'list-item' ? 'bold' : 'normal' }
@@ -121,11 +129,12 @@ export default function Areas({ actingAreas }: any) {
                     alignItems="center"
                     minH="50vh"
                 >
-                { actingAreas.map((area: any, index: number) => {
+                { actingAreas.map((area, index: number) => {
                     const isBgNotBlack = index % 2 == 0;
 
                         return (
                             <Flex
+                                key={ index }
                                 flexDirection="column"
                                 alignItems="center"
                                 backgroundColor={ isBgNotBlack ? '#fff' : 'brand.bg' }
@@ -152,12 +161,11 @@ export default function Areas({ actingAreas }: any) {
                                 </Flex>
 
                                 <Box mb={4} pt={10}>
-                                    { area.areaFullDescription.map((paragraph: any, index: number) => {
+                                    { area.areaFullDescription.map((paragraph, index: number) => {
                                         return (
-                                            <Flex color={isBgNotBlack ? '#1A202C' : 'brand.title_bg_black' } mx={{ base: "5", lg: "10" }} mb={6} alignItems='center'>
+                                            <Flex key={ index } color={isBgNotBlack ? '#1A202C' : 'brand.title_bg_black' } mx={{ base: "5", lg: "10" }} mb={6} alignItems='center'>
                                                 { paragraph.type === 'list-item' && <RiArrowRightSFill size={40} /> }
                                                 <Text 
-                                                    key={ index }
                                                     as={ paragraph.type === 'list-item' ? 'h2' : 'p' }
                                                     fontSize={ paragraph.type === 'list-item' ? 'xl' : 'lg' }
                                                     fontWeight={ paragraph.type === 'list-item' ? 'bold' : 'normal' }
@@ -186,17 +194,17 @@ export default function Areas({ actingAreas }: any) {
 export const getStaticProps: GetStaticProps = async () => {
 	const response = await PrismicClient.getByUID('acting_areas', 'acting_areas');
 
-	console.log(response.data.acting_areas)
+	// console.log(response.data.acting_areas)
 	const responseData = response.data.acting_areas;
 
-    const actingAreas = responseData.map((obj: any) => {
+    const actingAreas = responseData.map((obj) => {
         const bgImage = obj.area_page_image.url;
         const areaTitle = obj.area_name[0].text;
-        const areaFullDescription = obj.area_full_description.map((desc: any) => {
-            console.log(desc)
+        const areaFullDescription = obj.area_full_description.map((desc) => {
+            // console.log(desc)
             const newStr =  {
-                type: desc.type as string,
-                text: desc.text as string
+                type: desc.type,
+                text: desc.text
             }
             return newStr
         });

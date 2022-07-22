@@ -10,7 +10,7 @@ import Link from 'next/link';
 const CustomFlexBox = styled(ChevronDownIcon)`
     transform: rotate(0deg);
     transition: all 0.3s ease-out;
-    transform: ${(props) => (props.isopen ? `rotate(180deg)` : '')};
+    transform: ${(props) => (props.isOpen ? `rotate(180deg)` : '')};
 `
 
 const pages = [

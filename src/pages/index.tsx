@@ -11,16 +11,10 @@ import { PageHeading } from '../components/PageHeading';
 import { Slides } from '../components/Slides';
 import { ViewIcon } from '@chakra-ui/icons';
 import { PrismicClient } from '../services/prismic'
-// import Image from 'next/image';
 
 
-const Home: NextPage = ({ principles }: any) => {
+const Home: NextPage = () => {
 	const iconSizes = useBreakpointValue({ base: 60, md: 80 })
-
-	if(principles) {
-
-		console.log(principles)
-	}
 
 	return (
 		<>
