@@ -71,7 +71,7 @@ export function Footer() {
                                             <Image src="/insta.svg" height={24} width={24} alt="Instagram" />
                                         </Box>
                                     </Link>
-                                    <Link href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_PHONE_NUMBER}`} passHref>
+                                    <Link href={`https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_CONTACT_PHONE_NUMBER}`} passHref>
                                         <Box mr={4} as="a" target="_blank">
                                             <Image src="/whats.svg" height={24} width={24} alt="Whatsapp" />
                                         </Box>

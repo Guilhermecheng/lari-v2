@@ -95,7 +95,7 @@ export function MenuOptions() {
                     )
                 }) }
                     
-                    <Link href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_PHONE_NUMBER}`} passHref>
+                    <Link href={`https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_CONTACT_PHONE_NUMBER}`} passHref>
                         <Box as="a" target="_blank">
                             <Button 
                                 my={{ base: "20px", lg: 0 }} 

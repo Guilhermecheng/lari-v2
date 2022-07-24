@@ -56,7 +56,7 @@ export default function Contact() {
 
         axios({
             method: 'post',
-            url: `https://formspree.io/f/${process.env.FORMSPREE_API_URL}`,
+            url: `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_API_URL}`,
             data: formData,
             headers: {
           "Content-Type": "application/json",
