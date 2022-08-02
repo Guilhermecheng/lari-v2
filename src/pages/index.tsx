@@ -32,7 +32,7 @@ const Home: NextPage = () => {
                 flexDirection={{base: "column", md: "row"}}
 			>
 				<Box>
-					<PageHeading isBgDark={false}>Quem é Dra. Larissa</PageHeading>
+					<PageHeading isBgDark={false}>Sobre nós</PageHeading>
 
 					<Flex 
 						display={{ base: 'block', lg: 'flex' }}
@@ -52,11 +52,7 @@ const Home: NextPage = () => {
 							textAlign='justify'
 							ml={{ base: 0, lg: '2em' }}
 						>
-							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-							ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-							
-							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-							ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+							O escritório nasceu da vontade de desburocratizar a solução de problemas e humanizar a relação advogado – cliente, atendendo de forma individualizada e personalizada cada cliente e cada caso, defendendo a justiça e os direitos fundamentais.
 						</Text>
 					</Flex>
 				</Box>
