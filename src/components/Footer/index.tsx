@@ -10,6 +10,19 @@ export function Footer() {
     const  footerLogoHeightBreakPoint = useBreakpointValue({ base: "147px", md: "160px" })
     const  footerLogoWidthBreakPoint = useBreakpointValue({ base: "290px", md: "300px" })
 
+    function formatNumber(notFormattedNumber: string) {
+        var cleaned = ('' + notFormattedNumber).replace(/\D/g, '')
+        console.log(cleaned)
+        let phoneFormatRegex = cleaned.match(/^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/);
+        console.log(phoneFormatRegex)
+        if(phoneFormatRegex) {
+            return '(' + phoneFormatRegex[2] + ') ' + phoneFormatRegex[3] + ' ' + phoneFormatRegex[4] + '-' + phoneFormatRegex[5]
+        } else {
+            return null
+        }
+    }
+    const phoneNum = process.env.NEXT_PUBLIC_CONTACT_PHONE_NUMBER as string;
+    let formatted = formatNumber(phoneNum);
 
     return (
         <>
@@ -50,9 +63,8 @@ export function Footer() {
                                 fontSize="lg"
                                 mt={8}
                             >
-                                <Text mb="6">Telefone: 11 9 1234 1234</Text>
+                                <Text mb="3">Telefone: {formatted}</Text>
                                 <Text mb="6">E-mail: larissacarvalho.adv@gmail.com</Text>
-                                <Text>Endereço: Rua Pedro Alvares Cabral 123 - CEP 042123-123</Text>
                             </Box>
 
                             <Box mt={8}>

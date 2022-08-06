@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { MenuOptions } from './MenuOptions'
 
 export function Header() {
-    const  breakpoint = useBreakpointValue({ base: 40, lg: 55 })
+    const  heightBreakpoint = useBreakpointValue({ base: 40, lg: 80 }) // 55 antes
+    const  widthBreakpoint = useBreakpointValue({ base: 200, lg: 260 })
 
     return (
         <Flex
@@ -38,17 +39,19 @@ export function Header() {
                             _hover={{ cursor: 'pointer' }}
                         >
                             <Image 
-                                src="/ls.svg"
-                                height={ breakpoint }
-                                width={ breakpoint }
+                                src="/ls2.svg"
+                                height={ heightBreakpoint } // 80 grande, 50, mobile
+                                width={ widthBreakpoint }
                                 alt="Logo Cabeçalho LS Advocacia e Acessoria"
                             />
-                            <Text
+                            {/* <Text
                                 color="brand.title_bg_black"
+                                // fontFamily="Georgia, 'Times New Roman', Times, serif"
                                 fontSize={{base: "xl", lg: "2xl"}}
+                                // fontWeight="light"
                             >
-                                Dra. Larissa Silvestre
-                            </Text>
+                                Larissa Silvestre
+                            </Text> */}
                         </Flex>
                     </Link>
                     </Flex>

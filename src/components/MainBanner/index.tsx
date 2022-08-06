@@ -22,10 +22,11 @@ export function MainBanner() {
                 px={{ base: "5", md: "10" }}
                 w="100%"
                 display="flex"
-                justifyContent={{ base: "center", md: "flex-end" }}
+                justifyContent={{ base: "center", lg: "flex-end" }}
             >
                 <Image
-                    src="/logo_full_banner.svg"
+                    // src="/logo_full_banner.svg"
+                    src="/logo_banner_2.svg"
                     height={ logoHeightBreakPoint }
                     width={ logoWidthBreakPoint }
                     alt="Logo principal da LS Advocacia e Acessoria"

@@ -61,7 +61,7 @@ export function Slides() {
                                 alignItems="center"
                                 justifyContent="center"
                                 px={20}
-                                color="#e1e1e1"
+                                color="brand.title_bg_black"
                                 _hover={{ opacity: 0.8 }}
                             >
                                 <Heading

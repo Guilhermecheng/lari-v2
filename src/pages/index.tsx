@@ -9,7 +9,6 @@ import { ImEye } from 'react-icons/im'
 import { MainBanner } from '../components/MainBanner';
 import { PageHeading } from '../components/PageHeading';
 import { Slides } from '../components/Slides';
-import { ViewIcon } from '@chakra-ui/icons';
 import { PrismicClient } from '../services/prismic'
 
 
@@ -48,7 +47,7 @@ const Home: NextPage = () => {
 						<Text
 							maxW={{ base: '100%', lg: '60%' }}
 							py={{ base: 10, lg: 0 }}
-							fontSize={{ base: 'md', md: 'xl' }}
+							fontSize={{ base: 'lg', md: 'xl' }}
 							textAlign='justify'
 							ml={{ base: 0, lg: '2em' }}
 						>

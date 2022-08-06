@@ -10,7 +10,8 @@ import {
     Select, 
     Text, 
     Textarea, 
-    useBreakpointValue 
+    useBreakpointValue, 
+    useToast
 } from "@chakra-ui/react"
 
 import { useForm, SubmitHandler } from "react-hook-form"
@@ -20,7 +21,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { PageHeading } from "../../components/PageHeading"
 import { InputError } from "../../components/InputError";
 import axios from "axios";
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
 import Head from "next/head";
 
 interface FormCustomerData {
@@ -43,10 +44,13 @@ const schema = Yup.object({
 });
 
 export default function Contact() {
+    // form submit state
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
+    // responsive grid template
     const gridTemplateColumns = useBreakpointValue({ base: '1fr', lg: 'repeat(2, 1fr)' })
 
+    // form submit function
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormCustomerData>({
         resolver: yupResolver(schema)
     });
@@ -72,10 +76,26 @@ export default function Contact() {
         console.log(error)
     }
 
+    // form submit success message
+    const toast = useToast();
+
+    useEffect(() => {
+        if(submitSuccess) {
+            toast({
+                title: 'Mensagem enviada!',
+                description: "Sua mensagem foi recebida e entraremos em contato assim que possível.",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+                position: "top"
+            })
+        }
+    }, [submitSuccess])
+
     return (
         <>
             <Head>
-				<title>LS Advocacia e Acessoria | Contato</title>
+				<title>Contato | LS Advocacia e Acessoria</title>
 			</Head>
             <Container
                 maxW={1200}

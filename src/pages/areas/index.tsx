@@ -27,7 +27,7 @@ export default function Areas({ actingAreas }: ActingAreasProp) {
         return (
             <>
                 <Head>
-                    <title>LS Advocacia e Acessoria | Áreas de atuação</title>
+                    <title>Atuação | LS Advocacia e Acessoria</title>
                 </Head>
             
                 <Box display="block">

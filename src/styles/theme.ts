@@ -20,7 +20,8 @@ export const theme = extendTheme({
             bg: '#181818',
             title_bg_black: '#E8C548',
             title_bg_black_active: '#d69e2e',
-            success: "#2d9544"
+            // success: "#2d9544"
+            success: "#49a167"
         }
     },
 })
