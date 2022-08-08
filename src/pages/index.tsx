@@ -33,6 +33,18 @@ const Home: NextPage = () => {
 				<Box>
 					<PageHeading isBgDark={false}>Sobre nós</PageHeading>
 
+					{/* <Text
+						py={{ base: 10, lg: 0 }}
+						fontSize={{ base: 'lg', md: 'xl' }}
+						textAlign='justify'
+						// ml={{ base: 0, lg: '2em' }}
+						mb={8}
+					>
+						O escritório nasceu da vontade de desburocratizar a solução de problemas e humanizar a relação advogado – cliente, atendendo de forma individualizada e personalizada cada cliente e cada caso, defendendo a justiça e os direitos fundamentais.
+					</Text>
+
+					<Text as="h2" >Nossa equipe</Text> */}
+
 					<Flex 
 						display={{ base: 'block', lg: 'flex' }}
 					>
@@ -73,12 +85,23 @@ const Home: NextPage = () => {
 						<PageHeading isBgDark={true}>Áreas de atuação</PageHeading>
 
 						{/* <Image /> */}
-						{/* <Text
+						<Text
 							fontSize={{ base: 'md', md: 'xl' }}
+							fontWeight="medium"
+							textAlign='justify'
+							letterSpacing={0.5}
 						>
-							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-							ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-						</Text> */}
+							Somos especializados em atendimentos nos mais diversos assuntos em três das maiores áreas de atuação do direito.
+						</Text>
+						<Text
+							fontSize={{ base: 'md', md: 'xl' }}
+							fontWeight="medium"
+							textAlign='justify'
+							letterSpacing={0.5}
+							mt={{ base: 4, md: 0 }}
+						>
+							Clique no assunto de interesse para saber mais:
+						</Text>
 						<Box  width="100%" cursor="pointer"  mt={{ base: 8, md: 8 }}>
 							<Slides />
 						</Box>

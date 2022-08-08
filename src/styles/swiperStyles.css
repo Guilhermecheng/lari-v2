@@ -10,7 +10,7 @@
 }
 
 /* mobile only */
-@media (max-width: 500px) {
+@media (max-width: 720px) {
     .swiper-button-prev:after,
     .swiper-button-next:after {
         display: none;

@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text, useBreakpointValue, Heading } from "@chakra-ui/react";
+import { Box, Flex, Grid, Text, useBreakpointValue, Heading, Image } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from 'next/head'
 import { RiArrowRightSFill } from "react-icons/ri";
@@ -121,7 +121,7 @@ export default function Areas({ actingAreas }: ActingAreasProp) {
         return (
             <>
                 <Head>
-                    <title>LS Advocacia e Acessoria | Áreas de atuação</title>
+                    <title>Atuação | LS Advocacia e Acessoria</title>
                 </Head>
 
                 <Flex
@@ -139,8 +139,27 @@ export default function Areas({ actingAreas }: ActingAreasProp) {
                                 alignItems="center"
                                 backgroundColor={ isBgNotBlack ? '#fff' : 'brand.bg' }
                             >
-                                
+                                <PageHeading 
+                                    isBgDark={ index % 2 === 0 ? false : true}
+                                >
+                                    { area.areaTitle }
+                                </PageHeading>
+
                                 <Flex
+                                    alignItems="center"
+                                    w='85vw'
+                                    h='20vh'
+                                    bg={`url(${ area.bgImage })`}
+                                    backgroundPosition="center"
+                                    backgroundRepeat="no-repeat"
+                                    backgroundSize="cover"
+                                    justifyContent='center'
+                                    borderRadius={8}
+                                    mt={2}
+                                    boxShadow='lg'
+                                >
+                                </Flex>
+                                {/* <Flex
                                     w='100%'
                                     h='20vh'
                                     bg={`linear-gradient(0deg, rgba(51, 51,51, 0.8), rgba(51, 51,51, 0.8)), url(${ area.bgImage })`}
@@ -158,16 +177,16 @@ export default function Areas({ actingAreas }: ActingAreasProp) {
                                     >
                                         { area.areaTitle }
                                     </Heading>
-                                </Flex>
+                                </Flex> */}
 
-                                <Box mb={4} pt={10}>
+                                <Box mb={4} pt={8}>
                                     { area.areaFullDescription.map((paragraph, index: number) => {
                                         return (
                                             <Flex key={ index } color={isBgNotBlack ? '#1A202C' : 'brand.title_bg_black' } mx={{ base: "5", lg: "10" }} mb={6} alignItems='center'>
-                                                { paragraph.type === 'list-item' && <RiArrowRightSFill size={40} /> }
+                                                { paragraph.type === 'list-item' && <RiArrowRightSFill size={30} style={{ marginRight: "4px" }} /> }
                                                 <Text 
                                                     as={ paragraph.type === 'list-item' ? 'h2' : 'p' }
-                                                    fontSize={ paragraph.type === 'list-item' ? 'xl' : 'lg' }
+                                                    fontSize={ paragraph.type === 'list-item' ? 'lg' : 'lg' }
                                                     fontWeight={ paragraph.type === 'list-item' ? 'bold' : 'normal' }
                                                     textAlign="justify"
                                                 >
