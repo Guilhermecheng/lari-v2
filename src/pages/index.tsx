@@ -216,7 +216,7 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
 	const response = await PrismicClient.getAllByType('principles');
 
-	console.log(response)
+	// console.log(response)
 	const principles = response.map((rep) => {
 		const title = rep.data.principle_title[0].text;
 		const description = rep.data.principle_description[0].text;

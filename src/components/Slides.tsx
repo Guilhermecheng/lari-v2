@@ -48,7 +48,7 @@ export function Slides() {
             slidesPerView={1}
             navigation
             pagination
-            autoplay={true}
+            autoplay={{delay: 5000}}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
         >
