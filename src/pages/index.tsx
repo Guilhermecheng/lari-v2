@@ -125,7 +125,6 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 						<Box
 							maxW={{ base: '100%', lg: '60%' }}
 							pt={{ base: 10, lg: 0 }}
-
 							ml={{ base: 0, lg: '2em' }}
 						>
 							{ prismicTreadedResponse.homepage_info_data.about_us_description.map((desc, index) => {

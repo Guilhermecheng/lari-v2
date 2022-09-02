@@ -13,6 +13,7 @@ export const theme = extendTheme({
     fonts: {
         body: `'Lato', sans-serif`,
     },
+    
     breakpoints,
     colors: {
         brand: {
