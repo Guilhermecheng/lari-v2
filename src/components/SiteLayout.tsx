@@ -16,8 +16,8 @@ export default function SiteLayout({ children }: LayoutProps) {
 		>
 			<Header />
 			<Box
-				position="relative"
-				top={{ base: "68px", md: "80px" }}
+				// position="relative"
+				// top={{ base: "68px", md: "80px" }}
 				zIndex="10"
 				// w="100%"
 			>

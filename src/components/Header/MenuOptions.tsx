@@ -19,11 +19,11 @@ const pages = [
         pageTitle: "Início",
         pageHref: "/",
     },
-    {
-        pageName: "pag_areas_atuacao",
-        pageTitle: "Áreas de atuação",
-        pageHref: "/areas",
-    },
+    // {
+    //     pageName: "pag_areas_atuacao",
+    //     pageTitle: "Áreas de atuação",
+    //     pageHref: "/areas",
+    // },
     {
         pageName: "pag_contato",
         pageTitle: "Contato",

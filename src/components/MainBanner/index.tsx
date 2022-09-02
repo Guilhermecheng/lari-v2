@@ -8,10 +8,10 @@ export function MainBanner() {
 
     return (
         <Flex
-            h={{ base: "40", md: "300" }}
+            h={{ base: "270", md: "470" }}
             w="100%"
             backgroundImage="url('/fundo_banner.png')"
-            backgroundPosition="center"
+            backgroundPosition="center" 
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             alignItems="center"
@@ -19,6 +19,7 @@ export function MainBanner() {
         >
             <Box
                 maxW={1200}
+                pt={{ base: "68px", md: "80px" }}
                 px={{ base: "5", md: "10" }}
                 w="100%"
                 display="flex"

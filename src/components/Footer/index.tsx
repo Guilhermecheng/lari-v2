@@ -64,7 +64,7 @@ export function Footer() {
                                 mt={8}
                             >
                                 <Text mb="3">Telefone: {formatted}</Text>
-                                <Text mb="6">E-mail: larissasilvestre.adv@gmail.com</Text>
+                                <Text mb="6">E-mail: larissasilvestre.advocacia@gmail.com</Text>
                             </Box>
 
                             <Box mt={8}>

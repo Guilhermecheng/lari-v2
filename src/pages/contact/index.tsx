@@ -97,12 +97,15 @@ export default function Contact() {
             <Head>
 				<title>Contato | LS Advocacia e Acessoria</title>
 			</Head>
+            
             <Container
                 maxW={1200}
                 w='100%'
                 mb={{ base: 10 }}
                 display={{base: "block"}}
+                mt={{ base: 20, md: 24}}
             >
+                
                 
                 <PageHeading isBgDark={false}>
                     Deixe sua mensagem
