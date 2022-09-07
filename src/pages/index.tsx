@@ -50,11 +50,11 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 
 
 
-	if(!prismicTreadedResponse) {
-		return (
-			<>Carregando</>
-		)
-	}
+	// if(!prismicTreadedResponse) {
+	// 	return (
+	// 		<>Carregando</>
+	// 	)
+	// }
 
 	function reduceToChunks(descriptionArray) {
 		let newChunks = new Array();
