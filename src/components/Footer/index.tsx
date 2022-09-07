@@ -12,9 +12,7 @@ export function Footer() {
 
     function formatNumber(notFormattedNumber: string) {
         var cleaned = ('' + notFormattedNumber).replace(/\D/g, '')
-        console.log(cleaned)
         let phoneFormatRegex = cleaned.match(/^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/);
-        console.log(phoneFormatRegex)
         if(phoneFormatRegex) {
             return '(' + phoneFormatRegex[2] + ') ' + phoneFormatRegex[3] + ' ' + phoneFormatRegex[4] + '-' + phoneFormatRegex[5]
         } else {
@@ -33,7 +31,7 @@ export function Footer() {
                 w="100%"
                 justifyContent="center"
                 alignItems="center"
-                mt={{ base: "68px", md: "80px" }} // heading compensation
+                mt={{ base: 10, md: 16 }} // heading compensation
                 pt='20px'
                 px={{base: 5, md: 0}}
             >
@@ -50,7 +48,7 @@ export function Footer() {
                             src="/logo-footer.svg"
                             height={ footerLogoHeightBreakPoint }
                             width={ footerLogoWidthBreakPoint }
-                            alt="Logo alternativo LS Advocacia e Acessoria"
+                            alt="Logo alternativo LS Advocacia e Assessoria"
                         />
                     </GridItem>
 
@@ -105,7 +103,7 @@ export function Footer() {
                 color="brand.title_bg_black"
                 fontSize="0.7em"
             >
-                © LS Advocacia e Acessoria 2022. Todos os direitos reservados.
+                © LS Advocacia e Assessoria 2022. Todos os direitos reservados.
             </Flex>
         </>
     )

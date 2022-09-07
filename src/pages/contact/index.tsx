@@ -49,6 +49,7 @@ export default function Contact() {
 
     // responsive grid template
     const gridTemplateColumns = useBreakpointValue({ base: '1fr', lg: 'repeat(2, 1fr)' })
+    const fadeAnimation = useBreakpointValue({ base: "animate__animated animate__fadeIn", lg: "animate__animated animate__fadeInLeft" });
 
     // form submit function
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormCustomerData>({
@@ -95,15 +96,16 @@ export default function Contact() {
     return (
         <>
             <Head>
-				<title>Contato | LS Advocacia e Acessoria</title>
+				<title>Contato | LS Advocacia e Assessoria</title>
 			</Head>
             
             <Container
                 maxW={1200}
                 w='100%'
-                mb={{ base: 10 }}
+                // mb={{ base: 10 }}
                 display={{base: "block"}}
                 mt={{ base: 20, md: 24}}
+                className={fadeAnimation}
             >
                 
                 

@@ -5,6 +5,8 @@ import Image from "next/image";
 export function MainBanner() {
     const  logoHeightBreakPoint = useBreakpointValue({ base: "180px", md: "224px" })
     const  logoWidthBreakPoint = useBreakpointValue({ base: "265px", md: "485px" })
+    const fadeAnimation = useBreakpointValue({ base: "animate__animated animate__fadeIn", lg: "animate__animated animate__fadeInLeft" });
+
 
     return (
         <Flex
@@ -24,10 +26,10 @@ export function MainBanner() {
                 w="100%"
                 display="flex"
                 justifyContent={{ base: "center", lg: "flex-end" }}
+                className={fadeAnimation}
             >
                 <Image
-                    // src="/logo_full_banner.svg"
-                    src="/logo_banner_2.svg"
+                    src="/logo_banner.svg"
                     height={ logoHeightBreakPoint }
                     width={ logoWidthBreakPoint }
                     alt="Logo principal da LS Advocacia e Acessoria"

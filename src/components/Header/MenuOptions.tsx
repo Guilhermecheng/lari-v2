@@ -70,12 +70,12 @@ export function MenuOptions() {
                 _hover={{ cursor: "pointer", color: "bisque" }}
             />
             <Collapse
-                in={!breakpoint ? isOpen : true }                
+                in={!breakpoint ? isOpen : true }
             >
                 <Flex
                     direction={{base: "column", lg: "row"}}
                     textColor="brand.title_bg_black"
-                    fontSize={{base: "16", md: "16"}}
+                    fontSize="1em"
                     alignItems="center"
                 >
                     { pages.map(page => {
@@ -101,6 +101,8 @@ export function MenuOptions() {
                                 my={{ base: "20px", lg: 0 }} 
                                 colorScheme="yellow" 
                                 _hover={{ color: "#f0f0f0", backgroundColor: "#1dad52" }}
+                                fontSize="1em"
+
                             >
                                 Chame no whats!
                             </Button>

@@ -9,7 +9,6 @@ import { HiCheck } from 'react-icons/hi';
 
 import { MainBanner } from '../components/MainBanner';
 import { PageHeading } from '../components/PageHeading';
-import { Slides } from '../components/Slides';
 import { PrismicClient } from '../services/prismic'
 
 interface HomeProps {
@@ -47,6 +46,8 @@ interface HomeProps {
 const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 	const iconSizes = useBreakpointValue({ base: 60, md: 80 })
     const gridTemplate = useBreakpointValue({ base: '1fr', lg: 'repeat(2, 1fr)' })
+    const fadeAnimation = useBreakpointValue({ base: "animate__animated animate__fadeIn", lg: "animate__animated animate__fadeInLeft" });
+
 
 
 	if(!prismicTreadedResponse) {
@@ -82,17 +83,18 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 	return (
 		<>
 			<Head>
-				<title>LS Advocacia e Acessoria</title>
+				<title>LS Advocacia e Assessoria</title>
 			</Head>
 			<MainBanner />
 			<Container
 				maxW={1200}
 				px={{ base: "5", lg: "10" }}
-				mb={{ base: 0, md: 7 }}
+				mb={{ base: 4, md: 8 }}
 				minH="20vh"
                 display={{base: "block", md: "flex"}}
                 justifyContent="space-between"
                 flexDirection={{base: "column", md: "row"}}
+				className={fadeAnimation}
 			>
 				<Box>
 					<PageHeading isBgDark={false}>Sobre o escritório</PageHeading>
@@ -100,8 +102,7 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 					<Text
 						fontSize={{ base: 'lg', md: 'xl' }}
 						textAlign='justify'
-						// ml={{ base: 0, lg: '2em' }}
-						mb={8}
+						mb={5}
 					>
 						{ prismicTreadedResponse.homepage_info_data.about_us_description[0].text }
 					</Text>
@@ -117,14 +118,15 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 							{/* <Image src='/profile.jpeg' width={400} borderRadius='md' alt='Dra Larissa Silvestre; foto de perfil' /> */}
 							<Image
 								src={ prismicTreadedResponse.homepage_info_data.about_us_description[2].url }
-								width={400} borderRadius='md'
+								width={340} borderRadius='md'
 								alt='Dra Larissa Silvestre; foto de perfil'
+								boxShadow='xl'
 							/>
 						</Flex>
 
 						<Box
-							maxW={{ base: '100%', lg: '60%' }}
-							pt={{ base: 10, lg: 0 }}
+							maxW={{ base: '100%' }}
+							pt={{ base: 5, lg: 0 }}
 							ml={{ base: 0, lg: '2em' }}
 						>
 							{ prismicTreadedResponse.homepage_info_data.about_us_description.map((desc, index) => {
@@ -134,7 +136,7 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 										key={index}
 											fontSize={{ base: 'lg', md: 'xl' }}
 											textAlign='justify'
-											pb={5}
+											pb={{ base: 3, lg: 5 }}
 										>
 											{ desc.text }
 										</Text>
@@ -148,7 +150,6 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 
 			<Flex
 				w="100%"
-				// bg="brand.bg"
 				backgroundImage="url('/fundo-1.png')"
 				backgroundPosition="center"
 				backgroundRepeat="no-repeat"
@@ -158,18 +159,17 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 					maxW={1200}
 					px={{ base: "5", md: "10" }}
 					mb={{ base: 8, md: 12 }}
-					minH="20vh"
 					display={{base: "block", md: "flex"}}
 					justifyContent="space-between"
 					flexDirection={{base: "column", md: "row"}}
-
+					className={fadeAnimation}
 					color="brand.title_bg_black"
 				>
 					<Box w="100%">
 						<PageHeading isBgDark={true}>Áreas de atuação</PageHeading>
 
 						<Text
-							fontSize={{ base: 'md', md: 'xl' }}
+							fontSize={{ base: 'lg', md: 'xl' }}
 							fontWeight="medium"
 							textAlign='justify'
 							letterSpacing={0.5}
@@ -181,19 +181,20 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 							{/* <Slides /> */}
 
 							<Tabs variant='unstyled' bg="#e1e1e1b2" isFitted borderRadius="10px" >
-								<TabList h='80px' >
+								<TabList h={{ base: '72px', md: '80px' }} >
 								{  prismicTreadedResponse.homepage_info_data.acting_areas.map((acting_area, index) => {
 									const isFair = index % 2;
 									return (
 										<Tab
 											key={index}
+											w="100%"
 											bg="#4E4E4E"
 											color="#E8C548"
 											fontSize="xl"
 											fontWeight="bold"
 											_selected={{ color: '#4E4E4E', bg: '#e1e1e1b2' }}
 											_focus={{ outline: 'none' }}
-											borderRadius={ isFair ? "0 10px 0 0" : "10px 0 0 0"}
+											borderRadius={ isFair ? "0 10px 0 0" : "10px 0 0 0" }
 											letterSpacing={2}
 										>
 											{ acting_area.area_name[0].text }
@@ -206,12 +207,12 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 									color="#181818" 
 									fontSize={{ base: 'lg', md: 'xl' }}
 									px={{ base: 2}}
-									pb={{ base: 4 }}
+									pb={{ base: 4, lg: 6 }}
 								>
 								{  prismicTreadedResponse.homepage_info_data.acting_areas.map((acting_area, index) => {
 
 									return (
-										<TabPanel p={4} key={index} minH={650}>
+										<TabPanel p={4} key={index} minH={300} className="tabpanel">
 											<Flex direction="column">
 
 												{ acting_area.area_description.map((description_item, descIndex) => {
@@ -220,10 +221,10 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 														case "paragraph":
 															return (
 																<Text 
-																key={descIndex}
-																w="100%"
-																pt={{ base: 6, lg: 8 }}
-																textAlign="justify"
+																	key={descIndex}
+																	w="100%"
+																	pt={{ base: 2, lg: 4 }}
+																	textAlign="justify"
 																>
 																	{ description_item.text }
 																</Text>
@@ -290,11 +291,12 @@ const Home: NextPage = ({ prismicTreadedResponse }: any) => {
 			<Container
 				maxW={1200}
 				px={{ base: "5", md: "10" }}
-				mb={{ base: 8, md: 12 }}
+				// mb={{ base: 0, md: 12 }}
 				minH="20vh"
                 display={{base: "block", md: "flex"}}
                 justifyContent="space-between"
                 flexDirection={{base: "column", md: "row"}}
+				className={fadeAnimation}
 			>
 				<Box w='100%'>
 					<PageHeading isBgDark={false}>Princípios</PageHeading>

@@ -1,4 +1,4 @@
-import { Flex, Text, Container, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Container, useBreakpointValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -7,8 +7,8 @@ import {useRouter} from 'next/router';
 import { MenuOptions } from './MenuOptions'
 
 export function Header() {
-    const  heightBreakpoint = useBreakpointValue({ base: 40, lg: 80 }) // 55 antes
-    const  widthBreakpoint = useBreakpointValue({ base: 200, lg: 260 })
+    const  heightBreakpoint = useBreakpointValue({ base: 45, lg: 80 }) // 55 antes
+    const  widthBreakpoint = useBreakpointValue({ base: 230, lg: 260 })
 
     const [scrollYMoreThanZero, setscrollYMoreThanZero] = useState(true);
 
@@ -65,20 +65,13 @@ export function Header() {
                         >
                             { scrollYMoreThanZero && (
                                 <Image 
-                                    src="/ls2.svg"
+                                    src="/logo_header.svg"
                                     height={ heightBreakpoint } // 80 grande, 50, mobile
                                     width={ widthBreakpoint }
-                                    alt="Logo Cabeçalho LS Advocacia e Acessoria"
+                                    alt="Logo Cabeçalho LS Advocacia e Assessoria"
                                 />
                             )}
-                            {/* <Text
-                                color="brand.title_bg_black"
-                                // fontFamily="Georgia, 'Times New Roman', Times, serif"
-                                fontSize={{base: "xl", lg: "2xl"}}
-                                // fontWeight="light"
-                            >
-                                Larissa Silvestre
-                            </Text> */}
+                            
                         </Flex>
                     </Link>
                     </Flex>

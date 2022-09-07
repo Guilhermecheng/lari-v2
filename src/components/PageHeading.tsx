@@ -27,7 +27,7 @@ export function PageHeading({children, isBgDark, fontSize, isMarginYNotNecessary
             fontSize={ headingFontSize }
             fontFamily="Georgia, 'Times New Roman', Times, serif"
             fontWeight="medium"
-            my={!isMarginYNotNecessary ? { base: 4, md: 8 } : 0}
+            my={!isMarginYNotNecessary ? { base: 5, md: 8 } : 0}
         >
             { children }
 
