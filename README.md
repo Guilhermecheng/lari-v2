@@ -12,8 +12,8 @@ Page focused to be responsive, and work well both in desktops and mobile devices
 
 ### Desktop
 <div style="display: flex;">
-  <img src="https://user-images.githubusercontent.com/62719629/195376792-f061595a-bc14-40c2-adcb-71102410b5f7.png" height="300px" />
-  <img src="https://user-images.githubusercontent.com/62719629/195380218-2eb4192d-83ab-4ce0-bd2f-b357c2c406ea.png" height="300px" />
+  <img src="https://user-images.githubusercontent.com/62719629/195376792-f061595a-bc14-40c2-adcb-71102410b5f7.png" width="600px" />
+  <img src="https://user-images.githubusercontent.com/62719629/195380218-2eb4192d-83ab-4ce0-bd2f-b357c2c406ea.png" width="600px" />
 </div>
 
 ### Mobile
