@@ -76,7 +76,7 @@ export function Footer() {
                                             <Image src="/linkedin.svg" height={24} width={24} alt="LinkedIn" />
                                         </Box>
                                     </Link>
-                                    <Link href="https://www.instagram.com/larissasilvestreadv/" passHref>
+                                    <Link href="https://www.instagram.com/larissasilvestre.adv/" passHref>
                                         <Box mr={4} as="a" target="_blank">
                                             <Image src="/insta.svg" height={24} width={24} alt="Instagram" />
                                         </Box>
