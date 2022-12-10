@@ -10,7 +10,7 @@ export function Header() {
     const  heightBreakpoint = useBreakpointValue({ base: 45, lg: 80 }) // 55 antes
     const  widthBreakpoint = useBreakpointValue({ base: 230, lg: 260 })
 
-    const [scrollYMoreThanZero, setscrollYMoreThanZero] = useState(true);
+    const [scrollYMoreThanZero, setscrollYMoreThanZero] = useState(false);
 
     const router = useRouter()
 
