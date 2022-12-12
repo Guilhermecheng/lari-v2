@@ -52,7 +52,7 @@ export default function Contact() {
     const fadeAnimation = useBreakpointValue({ base: "animate__animated animate__fadeIn", lg: "animate__animated animate__fadeInLeft" });
 
     // form submit function
-    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormCustomerData>({
+    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormCustomerData>({
         resolver: yupResolver(schema)
     });
 
@@ -69,6 +69,7 @@ export default function Contact() {
         }).then(response => {
             if(response.status === 200) {
                 setSubmitSuccess(true);
+                reset()
             }
         })
     }
