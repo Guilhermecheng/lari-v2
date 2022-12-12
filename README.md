@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Lari-v2
 
-## Getting Started
+Second version of Lari's website. https://www.larissasilvestre.adv.br/ <br/>
+Made using React, Chakra UI, Prismic as CMS and Formspree API. 
 
-First, run the development server:
+### Objective
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Simple landing page, made to deliver the most important info about the office, and contact info.<br/>
+Page focused to be responsive, and work well both in desktops and mobile devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## The website
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Desktop
+  <img src="https://user-images.githubusercontent.com/62719629/195376792-f061595a-bc14-40c2-adcb-71102410b5f7.png" width="600px" />
+    <br/>
+  <img src="https://user-images.githubusercontent.com/62719629/195380218-2eb4192d-83ab-4ce0-bd2f-b357c2c406ea.png" width="600px" />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Mobile
+<div style="display: flex;">
+  <img src="https://user-images.githubusercontent.com/62719629/195377493-0de62209-d6c6-4e9b-8b89-140df28dc00f.png" height="500px" />
+  <img src="https://user-images.githubusercontent.com/62719629/195380395-8f75a699-51e6-48ef-b4bb-b3a7e939707d.png" height="500px" />
+</div>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Design and Main features
 
-## Learn More
+### Colors
+<img src="https://user-images.githubusercontent.com/62719629/195384557-b8afd3c5-dc4b-4dcc-aefe-4f6a7f47917c.png" height="400px" />
 
-To learn more about Next.js, take a look at the following resources:
+### Header mobile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Works as a accordion component, which can be opened, or closed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<div style="display: flex;">
+  <img src="https://user-images.githubusercontent.com/62719629/195385299-f3058d70-0301-4de3-a898-86d3a4f923bd.png" height="200px" />
+  <img src="https://user-images.githubusercontent.com/62719629/195385787-e47bd247-b1d1-4278-9953-caab5acdb5ce.png" height="200px" />
+</div>
 
-## Deploy on Vercel
+### Header desktop
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+At the main page, is invisible at the top, and shows up after scrolling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ <img src="https://user-images.githubusercontent.com/62719629/195385632-2ea6afe3-3d0d-4862-aa08-6b6484f06b4c.png" width="700px" />
+ <br/><br/>
+ <img src="https://user-images.githubusercontent.com/62719629/195385676-2991cad3-70cb-405d-93a3-9a3b7b1cca82.png" width="700px" />
+
+### Form
+
+Form component. It sends an email, through Formspree, to the configured address. A simple way to the user to communicate if (s)he needs more info. 
+
+<img src="https://user-images.githubusercontent.com/62719629/195386917-ef04dcd2-dab6-4e9b-83c8-452ebf657541.png" height="500px" />
+
+
+
+
