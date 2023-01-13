@@ -1,7 +1,7 @@
 ## Lari-v2
 
 Second version of Lari's website. https://www.larissasilvestre.adv.br/ <br/>
-Made using React, Chakra UI, Prismic as CMS and Formspree API. 
+Made using Nextjs, Chakra UI, Prismic as CMS and Formspree API. 
 
 ### Objective
 
